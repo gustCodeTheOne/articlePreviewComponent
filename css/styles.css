@@ -1,0 +1,208 @@
+/* ARTICLE PREVIEW COMPONENT V01 --------------------------------*/
+/* GENERAL PROPERTIES -------------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Manrope Bold";
+  src: url("./fonts/static/Manrope-Bold.ttf");
+}
+@font-face {
+  font-family: "Manrope Medium";
+  src: url("./fonts/static/Manrope-Medium.ttf");
+}
+body {
+  background-color: hsl(210, 46%, 95%);
+  font-size: 13px;
+}
+.content {
+  max-width: 1440px;
+  margin: 0px auto;
+}
+/* END GENERAL PROPERTIES ---------------------------------------*/
+
+.articleContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 730px;
+  margin: 0px auto;
+  margin-top: 258px;
+  margin-bottom: 258px;
+  background-color: #fff;
+  border-radius: 10px 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.imageContainer {
+  width: 39%;
+  overflow: hidden;
+  background-image: url("../images/drawers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  width: 50%;
+  padding: 38px 38px 32px;
+}
+.title,
+.name {
+  font-family: "Manrope Bold";
+  color: hsl(217, 19%, 35%);
+}
+.desc,
+.date {
+  font-family: "Manrope Medium";
+}
+.desc {
+  color: hsl(214, 17%, 51%);
+}
+.date {
+  color: hsl(212, 23%, 69%);
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.avatar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+#photo {
+  width: 40px;
+  border-radius: 20px 20px;
+}
+.iconContainer,
+.iconShare {
+  background-color: #eee;
+  transition: all 300ms;
+}
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px 20px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.iconShare {
+  width: 20px;
+  height: 20px;
+  color: gray;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.iconContainer:hover,
+.iconContainer:hover .iconShare {
+  background-color: rgb(73, 67, 67);
+}
+.tooltip {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  margin-left: 218px;
+  margin-top: -70px;
+  width: 245px;
+  height: 50px;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 10px 10px;
+}
+.tooltipText {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.tooltip .tooltipText::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+.share {
+  font-family: "Manrope Medium";
+  font-size: 14px;
+  color: hsl(212, 23%, 69%);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  align-self: center;
+}
+.tooltipText a {
+  margin-top: 6px;
+}
+.active {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .articleContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    height: fit-content;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 250px;
+  }
+  .textContainer {
+    width: auto;
+  }
+  .iconContainer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .tooltip {
+    margin-left: -38px;
+    margin-top: -13px;
+    width: 90%;
+    height: 85px;
+    border-top-left-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;
+  }
+  .tooltipText {
+    height: 40px;
+    width: 70%;
+    justify-content: left;
+    margin-left: 38px;
+    margin-top: 13px;
+  }
+  .tooltip .tooltipText::after {
+    content: none;
+  }
+  .tooltipText a {
+    margin-top: 11px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media (max-width: 375px) {
+  .iconContainer {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px 15px;
+    margin-top: 5px;
+  }
+  .iconShare {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
